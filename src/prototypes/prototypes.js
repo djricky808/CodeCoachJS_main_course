@@ -6,15 +6,21 @@ const personA = new Person();
 
 // TODO:
 // create another instance of Person called personB
+const personB = new Person();
 
 // TODO:
 // override the default name and job of personB
 // personB name should be 'Randy' and their job should be 'Doughnut Maker'
 
+personB.name = "Randy";
+personB.job = "Doughnut Maker";
+
 // TODO:
 // attach a new method `greeting` to the Person prototype
 // it should return a greeting that says `My name is <name> and my job is <job>`
-Person.prototype.greeting = function () {};
+Person.prototype.greeting = function () {
+  return `My name is ${this.name} and my job is ${this.job}`;
+};
 
 // TODO:
 // add a new method to the Array prototype called `myCustomFind`
@@ -22,10 +28,16 @@ Person.prototype.greeting = function () {};
 // ex: [1,2,3].myCustomFind(3) = true
 // [1,2,3].myCustomFind(10) = false
 
-Array.prototype.myCustomFind = function (num) {};
+Array.prototype.myCustomFind = function (num) {
+  if (this.includes(num)) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 module.exports = {
-	personB,
-	personA,
-	Person,
+  personB,
+  personA,
+  Person,
 };
