@@ -1,5 +1,8 @@
 // functions have a prototype property and functions are objects
-const Person = function () {};
+const Person = function () {
+  this.name = "Joe";
+  this.job = "Pizza Guy";
+};
 
 // new instance of Person
 const personA = new Person();
